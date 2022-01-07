@@ -1,0 +1,28 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>WeekTest1</title>
+    <script type="text/javascript">
+	function maxProduct(nums){
+		var sum=nums[0]*nums[1];
+        n=nums.length;
+		for(var i=0;i<n;i++){
+            for(var j=1;j<n;j++){
+                if(j<=i){continue
+                }else if(sum>=nums[i]*nums[j]){continue
+                }else{sum=nums[i]*nums[j]}
+            }
+        }
+		alert(sum);
+	}
+    maxProduct([5,20,2,6]);
+    maxProduct([10,-20,0,3]);
+    maxProduct([-1,2]);
+    maxProduct([-1,0,2]);
+    maxProduct([-1,-2,0]);
+    </script>
+</head>
+<body>
+</body>
+</html>

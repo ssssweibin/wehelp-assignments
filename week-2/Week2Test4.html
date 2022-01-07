@@ -1,0 +1,25 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>WeekTest1</title>
+    <script type="text/javascript">
+	function twoSum(nums,target){
+        n=nums.length;
+		for(var i=0;i<n;i++){
+            for(var j=1;j<n;j++){
+                if(j<=i){continue
+                }else if(nums[i]+nums[j]==target){return [i,j]
+                }else{continue}
+            }
+        }
+        alert("None");
+    }
+    alert(twoSum([2,11,7,15],9));
+    let result=twoSum([2,11,7,15],9);
+    console.log(result);
+    </script>
+</head>
+<body>
+</body>
+</html>
