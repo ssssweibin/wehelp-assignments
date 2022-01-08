@@ -12,7 +12,7 @@ def maxZero(nums):
         if nums[i]!=0:
             acc=0
             continue
-        elif acc<(sum): 
+        elif acc<sum: 
             acc=acc+1
             continue
         else: sum=sum+1;acc=acc+1
