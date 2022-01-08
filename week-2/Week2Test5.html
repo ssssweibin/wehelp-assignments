@@ -1,0 +1,29 @@
+﻿<DOCTYPE! html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>WeekTest1</title>
+    <script type="text/javascript">
+	
+    </script>
+</head>
+<body>
+    <script>
+    function maxZero(nums){
+        n=nums.length;
+        let sum=0;
+        let acc=0;
+		for(var i=0;i<n;i++){
+            if(nums[i]!=0){ acc=0;continue;
+            }else if(acc<sum){acc=acc+1;continue;
+            }else{acc=acc+1;sum=sum+1}
+        }
+        console.log(sum);
+    }
+    maxZero([0,1,0,0,])
+    maxZero([1,0,0,0,0,1,0,1,0,0])
+    maxZero([1,1,1,1,1])
+    maxZero([0,0,0,1,1])
+    </script>
+</body>
+</html>
