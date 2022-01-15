@@ -1,0 +1,70 @@
+﻿<DOCTYPE! html><!-- 2022Jan12 W.WBLee          -->
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width" initial-scale="1.0">
+	<title>WeHelp Week3Test2</title>
+	<link rel="stylesheet" type="text/css" href="W3-2-layout.css"/>
+	<script type="text/javascript">
+		let info3={"sitesum":[],"picsum":[]};
+		let z=0;
+        function init1(){
+        	let src="https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json"
+			let req=new XMLHttpRequest();
+			req.open("get",src,);
+			req.onload=function(){
+				var info=req.responseText;
+				var info2=JSON.parse(info);
+				var n=info2.result.count;
+				let sitesum=[];
+				let picsum=[];
+				for(let i=0;i<n-1;i++){
+					let site=info2.result.results[i].stitle;
+					let picweb=info2.result.results[i].file;
+					let picweb1=picweb.split("http",2);
+					let picweb2="http"+picweb1[1];
+					info3.sitesum.push(site);
+					info3.picsum.push(picweb2);
+				}
+				for(;z<8;z++){
+					var newimg=document.createElement("img");
+					newimg.src=info3.picsum[z];
+					document.getElementById("cata"+z).appendChild(newimg);
+					var newdiv=document.createElement("div");
+					var txt=document.createTextNode(info3.sitesum[z]);
+					newdiv.appendChild(txt);
+					newdiv.className="model";
+					document.getElementById("cata"+z).appendChild(newdiv);
+				}	
+			}
+			req.send(null);
+            console.log(info3);
+		}
+    </script>
+</head>
+<body onload="init1()">
+	<div class="frame">
+		<div class="title">My Website</div>
+		<div class="subject">
+			<div class="item">Item-1</div>
+			<div class="item">Item-2</div>
+			<div class="item">Item-3</div>
+			<div class="item">Item-4</div>
+			<div calss="hamber"><img class="hamber" src="hamber.png"/></div>
+		</div>
+	</div>
+	<div class="welcome">
+		<div class="eyecatch">Wellcome to MyHome</div>
+	</div>
+	<div class="gallery">
+		<div class="catalog" id="cata0"></div> <!--<img class="photo" id="pic0" src="K1.png"/><div class="model" id="topic0"></div> -->
+		<div class="catalog" id="cata1"></div> <!--<img class="photo" id="pic1" src="K2.png"/><div class="model" id="topic1"></div> -->
+		<div class="catalog" id="cata2"></div> <!--<img class="photo" id="pic2" src="K3.png"/><div class="model" id="topic2"></div> -->
+		<div class="catalog" id="cata3"></div> <!--<img class="photo" id="pic3" src="K4.png"/><div class="model" id="topic3"></div> -->
+		<div class="catalog" id="cata4"></div> <!--<img class="photo" id="pic4" src="T1.png"/><div class="model" id="topic4"></div> -->
+		<div class="catalog" id="cata5"></div> <!--<img class="photo" id="pic5" src="T2.png"/><div class="model" id="topic5"></div> -->
+		<div class="catalog" id="cata6"></div> <!--<img class="photo" id="pic6" src="T3.png"/><div class="model" id="topic6"></div> -->
+		<div class="catalog" id="cata7"></div> <!--<img class="photo" id="pic7" src="T4.png"/><div class="model" id="topic7"></div> -->
+	</div>
+</body>
+</html>
