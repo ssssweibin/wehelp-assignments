@@ -5,13 +5,9 @@ from flask import redirect
 from flask import session
 app=Flask(__name__)    
 app.secret_key="week4test3"
-    #static_folder="static", 
-    #static_url_path="/"
-# 建立 application 物件#建立路徑 / 的處理函式
-@app.route("/") #函式的decorator
+@app.route("/")
 def index():
         return render_template("LoginHome.html") # 首頁:LoginHome.html; 成功登入頁面:member.html; 失敗登入頁面:error.html
-
 @app.route("/signin", methods=["POST"])
 def signin():
     userID=request.form["userID"]
@@ -30,11 +26,10 @@ def signin():
 def signout():
     session["loginStatus"]="未登入"
     return render_template("LoginHome.html")
-@app.route("/member")  # 檢查登入狀態 loginStatus 
+@app.route("/member")  # 檢查登入狀態 loginStatus
 def member():
     if session["loginStatus"]=="已登入":
         return render_template("member.html")
     else:
         return render_template("LoginHome.html")
-#if __name__=="__main__":
 app.run(port=3000)
