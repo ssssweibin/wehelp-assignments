@@ -8,7 +8,7 @@ password varchar(255) collate utf8mb4_unicode_ci not null,
 follower_count int not null default 0,
 time datetime not null default current_timestamp()
 )
-![GITHUB](,request2.png)
+![GITHUB](request2.png)
 
     ##Request3
 insert into member(name,username,password,follower_count)
@@ -30,11 +30,11 @@ SELECT * from member WHERE username='test' and password='test';
 SET SQL_SAFE_UPDATES=0;
 UPDATE member SET name='test2' WHERE username='test';
 SET SQL_SAFE_UPDATES=1;
-![GITHUB](,request3.png)
-![GITHUB](,request3-2.png)
+![GITHUB](request3.png)
+![GITHUB](request3-2.png)
 
     ##Request4
 SELECT count(username) FROM member;
 SELECT sum(follower_count) FROM member;
 SELECT avg(follower_count) FROM member;
-![GITHUB](,request4.png)
+![GITHUB](request4.png)
