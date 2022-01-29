@@ -1,4 +1,5 @@
     #Request2
+    CREATE DATABASE website;
     use website;
     CREATE TABLE member(
     id bigint not null key auto_increment,
