@@ -1,13 +1,13 @@
     ##Request2
-use website;
-CREATE TABLE member(
-id bigint not null key auto_increment,
-name varchar(255) collate utf8mb4_unicode_ci null,
-username varchar(255) collate utf8mb4_unicode_ci not null,
-password varchar(255) collate utf8mb4_unicode_ci not null,
-follower_count int not null default 0,
-time datetime not null default current_timestamp()
-)
+    use website;
+    CREATE TABLE member(
+    id bigint not null key auto_increment,
+    name varchar(255) collate utf8mb4_unicode_ci null,
+    username varchar(255) collate utf8mb4_unicode_ci not null,
+    password varchar(255) collate utf8mb4_unicode_ci not null,
+    follower_count int not null default 0,
+    time datetime not null default current_timestamp()
+    )
 ![GITHUB](request2.png)
 
     ##Request3
