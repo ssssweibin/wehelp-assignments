@@ -8,6 +8,7 @@ password varchar(255) collate utf8mb4_unicode_ci not null,
 follower_count int not null default 0,
 time datetime not null default current_timestamp()
 )
+
 ##Request3
 insert into member(name,username,password,follower_count)
 value('testla','test', 'test',5);
@@ -25,10 +26,10 @@ SELECT * FROM member ORDER BY time;
 SELECT * FROM member ORDER BY time LIMIT 1,3;
 SELECT * from member WHERE username='test';
 SELECT * from member WHERE username='test' and password='test';
-
 SET SQL_SAFE_UPDATES=0;
 UPDATE member SET name='test2' WHERE username='test';
 SET SQL_SAFE_UPDATES=1;
+
 ##Request4
 SELECT count(username) FROM member;
 SELECT sum(follower_count) FROM member;
