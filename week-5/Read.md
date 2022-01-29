@@ -34,3 +34,7 @@ UPDATE * from member WHERE username='test' and password='test';
 SET SQL_SAFE_UPDATES=0;
 UPDATE member SET name='test2' WHERE username='test';
 SET SQL_SAFE_UPDATES=1;
+
+SELECT count(username) FROM member;
+SELECT sum(follower_count) FROM member;
+SELECT avg(follower_count) FROM member;
