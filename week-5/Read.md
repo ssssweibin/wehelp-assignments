@@ -1,3 +1,4 @@
+##Request 2
 use website;
 CREATE TABLE member(
 id bigint not null key auto_increment,
@@ -7,7 +8,7 @@ password varchar(255) collate utf8mb4_unicode_ci not null,
 follower_count int not null default 0,
 time datetime not null default current_timestamp()
 )
-
+##Request3
 insert into member(name,username,password,follower_count)
 value('testla','test', 'test',5);
 insert into member(name,username,password,follower_count)
@@ -28,7 +29,7 @@ SELECT * from member WHERE username='test' and password='test';
 SET SQL_SAFE_UPDATES=0;
 UPDATE member SET name='test2' WHERE username='test';
 SET SQL_SAFE_UPDATES=1;
-
+##Request4
 SELECT count(username) FROM member;
 SELECT sum(follower_count) FROM member;
 SELECT avg(follower_count) FROM member;
