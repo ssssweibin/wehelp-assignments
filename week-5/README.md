@@ -38,5 +38,6 @@
     SELECT sum(follower_count) FROM member;
     SELECT avg(follower_count) FROM member;
 ![GITHUB](request4.png)
+
     #Request5
-![GITHUB](request5.png)
+![GITHUB](request5-1.png)
