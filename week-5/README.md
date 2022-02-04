@@ -40,4 +40,12 @@
 ![GITHUB](request4.png)
 
     #Request5
+    mysql> create table message(
+    -> id bigint not null key auto_increment,
+    -> member_id bigint not null references member(id),
+    -> content varchar(255) collate utf8mb4_unicode_ci not null,
+    -> time datetime not null default current_timestamp(),
+    -> \G
+    
+    
 ![GITHUB](request5-1.png)
