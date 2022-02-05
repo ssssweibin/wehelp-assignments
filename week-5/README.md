@@ -47,12 +47,13 @@
     -> time datetime not null default current_timestamp(),
     -> \G
     
+    mysql> SELECT content, member_id, name
+    -> FROM member JOIN message ON member_id=member.id
+    -> \G
     
     mysql> SELECT username='test', member_id, content
     -> FROM member JOIN message ON member_id=member.id
     -> \G
     
-    
-![GITHUB](request5-1.png)
-![GITHUB](request5-2.png)
+![GITHUB](request5-12.png)
 ![GITHUB](request5-3.png)
