@@ -49,23 +49,24 @@ def signin():
 #   Name=request.form["Name"]
     userName=request.form["userName"]
     passWord=request.form["passWord"]
-    sql="SELECT username,password FROM website.member WHERE username=%s"
-    val=(userName,)
-    mycursor=mydb.cursor()
-    mycursor.execute(sql,val)
-    mydata=mycursor.fetchone()
-    mycursor.close()
-    myuname=mydata[0]
-    mypword=mydata[1]
-    if userName==myuname and passWord==mypword:
-        session["userName"]=userName
-        return redirect("/member")
-    elif userName=="" or passWord=="":
-        #session["loginStatus"]="未登入"
+    if userName=="" or passWord=="":
         return render_template("error.html",message="請輸入帳號, 密碼")
-    else: 
-        #session["loginStatus"]="未登入"
-        return render_template("error.html",message="帳號或密碼輸入錯誤")
+    else:
+        sql="SELECT username,password FROM website.member WHERE username=%s"
+        val=(userName,)
+        mycursor=mydb.cursor()
+        mycursor.execute(sql,val)
+        mydata=mycursor.fetchone()
+        mycursor.close()
+        print(mydata)
+        if mydata==None:
+            return render_template("error.html",message="帳號或密碼輸入錯誤")
+        elif userName!=mydata[0] or passWord!=mydata[1]:
+            #session["loginStatus"]="未登入"
+            return render_template("error.html",message="帳號或密碼輸入錯誤")          
+        else: 
+            session["userName"]=userName
+            return redirect("/member")
 @app.route("/signout")
 def signout():
     session["userName"]=""
