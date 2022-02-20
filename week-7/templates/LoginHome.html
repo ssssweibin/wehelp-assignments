@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <mete chartset="utf-8"/>
+    <meta name="viewport" content=""width=device-width, intial-scale="1.0"/>
+    <title>W6 Login Home</title>
+    <style>
+        div.registryBox{
+            width:400px;
+            text-align:center;
+            border:1px solid #555555;
+        }
+        h2.response{
+            border:1px solid #555555;
+            width:400px;text-align:center;
+            background-color:#0c404d;margin-top:0;
+            margin-bottom:0px;padding-top:10px;
+            padding-bottom:10px;color:#ffffff;
+        }
+        h3.intro{
+            width:380px;
+            text-align:center;
+            padding:10px;margin:0;
+        }
+        form.registry{
+            width:400px;
+            background-color:#ffffff;
+        }
+    </style>
+</head>
+<body>
+<h2 class="response">歡迎光臨, 請註冊登入系統</h2>
+<div class="registryBox">
+<h3 class="intro">註冊帳號</h3>
+<form class="registry" action="/signup" method="POST"></br>
+    姓名 : <input type="text" name="Name"/></br>
+    帳號 : <input type="text" name="userName"/></br>
+    密碼 : <input type="password" name="passWord"/></br></br>
+    <button>註冊</button>
+</form></br>
+</div>
+<div class="registryBox">
+    <h3 class="intro">登入系統</h3>
+    <form class="registry" action="/signin" method="POST"></br>
+        帳號 : <input type="text" name="userName"/></br>
+        密碼 : <input type="password" name="passWord"/></br></br>
+        <button>登入</button>
+    </form></br>
+    <a href="/signout" style="text-align:center">登出頁面</a></br></br>
+</div>
+</body>
+</html>
