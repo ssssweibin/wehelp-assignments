@@ -1,0 +1,111 @@
+body{margin:0px;
+    display:block;
+    justify-content:center;
+}
+.frame{
+    display:flex;
+}
+.title{
+    flex:none;
+    width:200px;
+    text-align:left;
+    display:flex;
+    background-color:#ffffff;
+    font-style:bold;
+}
+.subject{
+    flex:auto;
+    width:50%;
+    display:flex;
+    justify-content:flex-end;
+    background-color:#ffffff;
+}
+.item{
+    flex:none;
+    width:60px;
+}
+.hamber{
+    flex:none;
+    display:none;
+    width:20px;
+}
+.welcome{
+    background-color:#8080ff;
+    width:100%;
+    margin:0px;
+}
+.eyecatch{
+    text-align:center;
+    height:300px;
+    font-size:40px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#8080ff;
+}
+.content{
+    display:flex;
+    justify-content:center;
+}
+.gallery{
+    display:inline-grid;
+    flex:none;
+    grid-template-columns:[L0]300px[L1]300px[L2]300px[L3]300px[L4] ;
+    grid-template-rows: [R0]240px[R1]240px[R2];
+    justify-content:center;
+    width:1200px;
+    align-items:center;
+    vertical-align:top; 
+    margin:auto;
+}
+.catalog{
+    background-color:#ffffff;
+    width:280PX;
+    padding:10px;
+    text-align: center;
+    display:block;
+    justify-content: center;
+    align-items: center;
+}
+img{width:280px;
+    justify-content:center
+}
+.model{
+    background-color:#41d4da;
+    width:280px;
+    height:30px;
+    line-height:30px;
+    vertical-align: top;
+    text-align:center;
+    justify-content: center;
+}
+@media(max-width:1200px){
+    .gallery{width:90%;
+        grid-template-columns:[L0]50%[L1]50%[L2];
+        grid-template-rows: repeat(5,25%[rowLine])
+    }
+    .catalog{width:98%;}
+    .model{width:98%;
+        padding:0%;
+        margin-left:1%;
+        margin-right:1%;
+    }
+    img{width:98%;
+        padding-right:1%;
+        padding-left:1%;
+        padding-bottom: 0%;
+        padding-top:1%;
+    }
+}
+@media(max-width:600px){
+    .gallery{width:90%;
+        grid-template-columns:[L0]100%[L1];
+        grid-template-rows: repeat(9,12.5%[rowLine])    
+    }
+    .catalog{width:100%;}
+    .model{width:100%}
+    .item{display:none}
+    .hamber{display:block;width:25px;}
+    img{width:100%}
+}
